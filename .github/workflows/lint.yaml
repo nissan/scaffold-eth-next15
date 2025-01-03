@@ -34,6 +34,9 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: nightly
+          
+      - name: Install Forge dependencies
+        run: cd packages/foundry && forge install && cd ../..
 
       - name: Run foundry node, deploy contracts (& generate contracts typescript output)
         env:
